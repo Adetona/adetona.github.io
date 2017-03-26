@@ -4,6 +4,38 @@
 
 <head>
 
+<link rel="shortcut icon" href="favicon.icon" type="image/x-icon">
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+
+<script>
+
+$(document).ready(function(){
+  // Add smooth scrolling to all links
+  $("a").on('click', function(event) {
+
+    // Make sure this.hash has a value before overriding default behavior
+    if (this.hash !== "") {
+      // Prevent default anchor click behavior
+      event.preventDefault();
+
+      // Store hash
+      var hash = this.hash;
+
+      // Using jQuery's animate() method to add smooth page scroll
+      // The optional number (800) specifies the number of milliseconds it takes to scroll to the specified area
+      $('html, body').animate({
+        scrollTop: $(hash).offset().top
+      }, 800, function(){
+
+        // Add hash (#) to URL when done scrolling (default click behavior)
+        window.location.hash = hash;
+      });
+    } // End if
+  });
+});
+</script>
+
 <style>
 
 body {
@@ -17,24 +49,24 @@ height : 1400px;
 @font-face {
     font-family: pacifico ;
     src: url(pacifico.TTF);
-    
+
 }
 
 @font-face {
 
 font-family : mathlete-bulky;
 src: url(mathlete-bulky.OTF);
-font-weight: bold ; 
-font-size: 40px ; 
+font-weight: bold ;
+font-size: 40px ;
 
 }
 
 
 @font-face {
 
-font-family: fanwood ; 
+font-family: fanwood ;
 
-src: url(fanwood.otf); 
+src: url(fanwood.otf);
 
 }
 
@@ -59,7 +91,7 @@ font-family:  ;
 
 margin : 0 auto;
 
-margin-top: 50px ; 
+margin-top: 50px ;
 }
 
 </style>
@@ -68,7 +100,12 @@ margin-top: 50px ;
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
 
-<title> My personal Page  </title>
+<title>
+
+Abiodun Adetona - Software Developer.
+
+
+ </title>
 
 </head>
 
@@ -81,43 +118,31 @@ margin-top: 50px ;
       <a class="navbar-brand" href="#" style="font-family :pacifico; font-size : 20px">Abiodun Adetona</a>
     </div>
     <ul class="nav navbar-nav navbar-right navbar-collapse" style="font-size: 25px; padding : 10px">
-     
-      <li><a href="#">About</a></li>
-      <li><a href="#">Experience</a></li>
-      <li><a href="#"> Contact</a></li>
+
+      <li><a href="#About">About</a></li>
+      <li><a href="#Experience">Experience</a></li>
+      <li><a href="#Contact"> Contact</a></li>
       <li><a href="#"> Books I've read </a> </li>
-      <li> <a href="#"> Blog </a> </li> 
+      <li> <a href="#"> Blog </a> </li>
     </ul>
   </div>
 </nav>
 
 
-<!-- Image -->
-<div class="container-fluid" style="margin-top: 120px">
+
+<!-- About -->
+
+<div class="container-fluid" id="About">
+
+<div class="row">
+
+<div class="col-md-12" style="margin-top:200px">
 
 
-
-<div class="row col-centered">
-
-
-
-<div class="col-md-12">
-
-<center> <img src="ade.jpg" class="img-circle img-thumbnail"/> </center>
-
-
+  <center> <img src="ade.jpg" class="img-circle img-thumbnail"/> </center>
 
 </div>
 
-<!-- Image ends here --> 
-
-<!-- Description --> 
-
-
-
-<div class="container-fluid">
-
-<div class="row">
 
 <div class="col-md-12 text-center">
 
@@ -141,34 +166,34 @@ margin-top: 50px ;
 
 
 
-<!-- Description ends here --> 
+<!-- About ends here -->
 
-<!-- Experience Bar --> 
-
-
+<!-- Experience Bar -->
 
 
-<div class="container">
 
-<div class="row" style="margin-top: 100px">
 
-<div class="col-md-12 text-center" style="font-size: 30px; margin-bottom: 20px; font-family: fanwood"> 
+<div class="container-fluid" id="Experience" style="margin-top : 100px" > 
 
-What I can do 
+<div class="row" >
+
+<div class="col-md-12 text-center" style="font-size: 30px; margin-bottom: ; font-family: fanwood">
+
+What I can do
 
 </div>
 
-<!-- Fisrt column starts --> 
-<div class="col-md-12"> 
+<!-- Fisrt column starts -->
+<div class="col-md-12">
 
 
- <p style="margin-left: 330px; margin-bottom: -20px "> Html/Css </p> 
-<div class="progress" style="width : 500px; margin:auto; margin-top: 30px;">
+ <p style="margin-left: 330px; margin-bottom: -20px "> Html/Css </p>
+<div class="progress" style="width : 500px; margin:auto; margin-top: 30px; height: 40px">
 
  <div class="progress-bar progress-bar-success progress-bar-striped active" role="progressbar"
   aria-valuenow="1" aria-valuemin="0" aria-valuemax="" style="width:70%">
     70%
-  </div> 
+  </div>
 
 </div>
 
@@ -178,13 +203,13 @@ What I can do
 <div class="col-md-12">
 
 
- <p style="margin-left: 330px; margin-bottom: -20px; margin-top: 20px "> PHP </p> 
-<div class="progress" style="width : 500px; margin:auto; margin-top: 30px;">
+ <p style="margin-left: 330px; margin-bottom: -20px; margin-top: 20px "> PHP </p>
+<div class="progress" style="width : 500px; margin:auto; margin-top: 30px; height: 40px">
 
  <div class="progress-bar progress-bar-success progress-bar-striped active" role="progressbar"
   aria-valuenow="1" aria-valuemin="0" aria-valuemax="" style="width:55%">
     55%
-  </div> 
+  </div>
 
 </div>
 
@@ -192,26 +217,26 @@ What I can do
 <div class="col-md-12">
 
 
- <p style="margin-left: 300px; margin-bottom: -20px; margin-top: 20px "> Javascript </p> 
-<div class="progress" style="width : 500px; margin:auto; margin-top: 30px;">
+ <p style="margin-left: 300px; margin-bottom: -20px; margin-top: 20px "> Javascript </p>
+<div class="progress" style="width : 500px; margin:auto; margin-top: 30px; height : 40px">
 
  <div class="progress-bar progress-bar-success progress-bar-striped active" role="progressbar"
   aria-valuenow="" aria-valuemin="0" aria-valuemax="" style="width:30%">
     30%
-  </div> 
+  </div>
 
 </div>
 
 <div class="col-md-12">
 
 
- <p style="margin-left: 300px; margin-bottom: -20px; margin-top:20px  "> Wordpress</p> 
-<div class="progress" style="width : 500px; margin:auto; margin-top: 30px;">
+ <p style="margin-left: 300px; margin-bottom: -20px; margin-top:20px  "> Wordpress</p>
+<div class="progress" style="width : 500px; margin:auto; margin-top: 30px; height: 40px">
 
  <div class="progress-bar progress-bar-success progress-bar-striped active" role="progressbar"
   aria-valuenow="1" aria-valuemin="0" aria-valuemax="" style="width:70%">
     70%
-  </div> 
+  </div>
 
 </div>
 
@@ -220,7 +245,7 @@ What I can do
 
 
 
-<div class="container-fluid">
+<div class="container-fluid" id="Contact" style="" > 
 
 <div class="row">
 
@@ -243,7 +268,7 @@ Twitter/Email
 </div>
 
 </div>
-<!-- Experience Bar ends --> 
+<!-- Experience Bar ends -->
 
 
 <!--
@@ -254,7 +279,7 @@ Twitter/Email
 
 <div class="col-md-12">
 
-Hello world 
+Hello world
 
 </div>
 
@@ -282,14 +307,14 @@ Hello world
 
 </div>
 
---> 
+-->
 
 <!--header id="home-top" class="nav-top nav-fixed nav-root"-->
 
 
 
 <!--
-<div class="container-fluid" style="position:fixed"> 
+<div class="container-fluid" style="position:fixed">
 
 
 
@@ -313,7 +338,7 @@ About
 
 <div class="col-sm-4 col-xs-4 col-md-2">
 
-Books 
+Books
 
 
 </div>
@@ -321,7 +346,7 @@ Books
 
 <div class="col-sm-4 col-xs-4 col-md-2">
 
-Skill Bar. 
+Skill Bar.
 
 
 </div>
@@ -334,7 +359,7 @@ Skill Bar.
 </div>
 
 </div>
-</header>  
+</header>
 
 </div>
 
@@ -389,11 +414,11 @@ Skill Bar.
 <div class="container-fluid">
 
 
-<div row> 
+<div row>
 
 <div class="col-md-12 text-center" style="font-family:mathlete-bulky; font-size: 30px; margin-top : 100px">
 
-My Skill Bar. 
+My Skill Bar.
 
 
 </div>
@@ -409,13 +434,13 @@ My Skill Bar.
 <div class="row">
 
 
- <p style="margin-left: 330px; margin-bottom: -20px "> PHP </p> 
+ <p style="margin-left: 330px; margin-bottom: -20px "> PHP </p>
 <div class="progress" style="width : 500px; margin:auto; margin-top: 30px;">
 
  <div class="progress-bar progress-bar-success progress-bar-striped active" role="progressbar"
   aria-valuenow="40" aria-valuemin="0" aria-valuemax="" style="width:55%">
     55%
-  </div> 
+  </div>
 
 
 
@@ -423,7 +448,7 @@ My Skill Bar.
 </div>
 
 
-<p style="margin-left: 330px; margin-bottom: -20px; margin-top: 30px "> Html/css </p> 
+<p style="margin-left: 330px; margin-bottom: -20px; margin-top: 30px "> Html/css </p>
 
 
 
@@ -432,15 +457,15 @@ My Skill Bar.
  <div class="progress-bar progress-bar-success progress-bar-striped active" role="progressbar"
   aria-valuenow="75" aria-valuemin="0" aria-valuemax="" style="width:55%">
     55%
-  </div> 
+  </div>
 
-  
+
 
 
 </div>
 
 
-<p style="margin-left: 330px; margin-bottom: -20px; margin-top: 30px "> Javascript </p> 
+<p style="margin-left: 330px; margin-bottom: -20px; margin-top: 30px "> Javascript </p>
 
 
 <div class="progress" style="width : 500px; margin:auto;margin-top: 30px">
@@ -448,19 +473,19 @@ My Skill Bar.
  <div class="progress-bar progress-bar-success progress-bar-striped active" role="progressbar"
   aria-valuenow="40" aria-valuemin="0" aria-valuemax="" style="width:55%">
     55%
-  </div> 
+  </div>
 
-  
-
-
-</div>
 
 
 
 </div>
 
+
+
 </div>
---> 
+
+</div>
+-->
 </body>
 
 </html>

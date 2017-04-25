@@ -1,491 +1,228 @@
-<!doctype html>
-
+<!DOCTYPE HTML>
 <html>
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+        <meta charset="UTF-8">
+        <script type="text/javascript">
+            var host = "www.justinleger.ca";
+            if ((host == window.location.host) && (window.location.protocol != "https:"))
+                window.location.protocol = "https";
+        </script> 
+        <meta name="description" content="Software engineering student. Hackathon enthusiast.">
+        <meta name="keywords" content="Justin Leger,Justin,Leger,Software Engineer,Software Engineering, hackathon,iot,ethereum, jusleg">
+        <meta name="author" content="Justin Leger">
+        <!-- Latest compiled and minified CSS -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+        <link rel="stylesheet" href="style.css">
+
+        <!-- Optional theme -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css" integrity="sha384-fLW2N01lMqjakBkx3l/M9EahuwpSfeNvV63J5ezn3uZzapT0u7EYsXMjQV+0En5r" crossorigin="anonymous">
+        <script src="https://code.jquery.com/jquery.min.js"></script>
+
+        <!-- Latest compiled and minified JavaScript -->
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+        
+        <!--Raleway font import-->
+        <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Raleway" />
+        
+        <!--Font Awesome-->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+        
+        <link rel="canonical" href="https://www.justinleger.ca">
+       
+        <!--Update your footer!!!!-->
+        <script type="text/javascript">
+            function setYear(){
+                var footer = document.getElementById("yearfooter");
+                var date = new Date();
+                date = date.getYear().toString();
+                date = "20"+ date.substring(1,3);
+                footer.innerHTML=date;
+            }
+        </script>
+        
+        <!--ETH price ticker-->
+        <script>
+            var previous=0;
+            function update(previous){
+                var theUrl = "https://poloniex.com/public?command=returnTicker";
+                var xmlHttp = null;
+
+                xmlHttp = new XMLHttpRequest();
+                xmlHttp.open( "GET", theUrl, false );
+                xmlHttp.send( null );
+                var response  = xmlHttp.responseText;
+                response = response.substring(response.indexOf("USDT_ETH\":{\"id\":149,\"last\":\"")+28);
+                response = response.substring(0,response.indexOf("\""));
+                var color="black";
+                if (previous<response){
+                    color="green";
+                } else if(previous>response){
+                    color="red";
+                }
+                document.getElementById("name").innerHTML="<span style=\"color:"+color+";font-family:Helvetica\">"+response+"</span>";
+                return response;
+            }
+            function load(){
+                previous = update(previous);
+                setTimeout(load,3000);
+            }
+        </script>
+        
+        <script>
+            var counter = 0;
+            var stringValue="";
+            document.onkeypress = function (e) {
+            e = e || window.event;
+            if(e.keyCode==105){
+                counter++;
+                stringValue+="i";
+            } else if(e.keyCode==99){
+              counter++;
+              stringValue+="c";
+            } else if(e.keyCode==101){
+              counter++;
+              stringValue+="e";
+            } else if(e.keyCode==117){
+                counter++;
+                stringValue+="u";
+            } else if(e.keyCode==116){
+                counter++;
+                stringValue+="t";
+            } else if(e.keyCode==104){
+                counter++;
+                stringValue+="h";
+            }
+            if(stringValue.indexOf("icu")!=-1){
+                stringValue="";
+                window.open("http://instantcena.ca");  
+            } else if(stringValue.indexOf("eth")!=-1){
+                 load();
+                document.getElementById("secondHeadline").innerHTML="ETH price $USD"
+            } else if(counter==3){
+                counter=0;
+                stringValue="";
+            }
+            };
+        </script>
+        
+        <title>Abiodun Adetona</title>
+    </head>
+    
+    <body onload="setYear()">
 
-<head>
+  <div class="container"> 
 
-<link rel="shortcut icon" href="favicon.icon" type="image/x-icon">
+  <div class="row"> 
 
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+  <div class="col-md-12 text-center"> 
 
-<script>
+<p style="margin-top : 100px"> <img src="image/abiodun.jpg" class ="img-circle img-thumbnail img-size" alt="Abiodun-Adetona"/> </p>
 
-$(document).ready(function(){
-  // Add smooth scrolling to all links
-  $("a").on('click', function(event) {
 
-    // Make sure this.hash has a value before overriding default behavior
-    if (this.hash !== "") {
-      // Prevent default anchor click behavior
-      event.preventDefault();
-
-      // Store hash
-      var hash = this.hash;
-
-      // Using jQuery's animate() method to add smooth page scroll
-      // The optional number (800) specifies the number of milliseconds it takes to scroll to the specified area
-      $('html, body').animate({
-        scrollTop: $(hash).offset().top
-      }, 800, function(){
-
-        // Add hash (#) to URL when done scrolling (default click behavior)
-        window.location.hash = hash;
-      });
-    } // End if
-  });
-});
-</script>
-
-<style>
-
-body {
-
-height : 1400px;
-
-
-}
-
-
-@font-face {
-    font-family: pacifico ;
-    src: url(pacifico.TTF);
-
-}
-
-@font-face {
-
-font-family : mathlete-bulky;
-src: url(mathlete-bulky.OTF);
-font-weight: bold ;
-font-size: 40px ;
-
-}
-
-
-@font-face {
-
-font-family: fanwood ;
-
-src: url(fanwood.otf);
-
-}
-
-
-
-.navTop {
-
-background-color : lime ;
-
-border : 10px;
-
-height : 50px;
-
-font-size : 30px;
-
-font-family:  ;
-
-
-}
-
-.col-centered {
-
-margin : 0 auto;
-
-margin-top: 50px ;
-}
-
-</style>
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-
-<meta name="viewport" content="width=device-width, initial-scale=1">
-
-
-<title>
-
-Abiodun Adetona - Software Developer.
-
-
- </title>
-
-</head>
-
-<body>
-
-
-<nav class="navbar  navbar-fixed-top well" style="border:40px;">
-  <div class="container-fluid">
-    <div class="navbar-header">
-      <a class="navbar-brand" href="#" style="font-family :pacifico; font-size : 20px">Abiodun Adetona</a>
-    </div>
-    <ul class="nav navbar-nav navbar-right navbar-collapse" style="font-size: 25px; padding : 10px">
-
-      <li><a href="#About">About</a></li>
-      <li><a href="#Experience">Experience</a></li>
-      <li><a href="#Contact"> Contact</a></li>
-      <li><a href="#"> Books I've read </a> </li>
-      <li> <a href="#"> Blog </a> </li>
-    </ul>
-  </div>
-</nav>
-
-
-
-<!-- About -->
-
-<div class="container-fluid" id="About">
-
-<div class="row">
-
-<div class="col-md-12" style="margin-top:200px">
-
-
-  <center> <img src="ade.jpg" class="img-circle img-thumbnail"/> </center>
-
-</div>
-
-
-<div class="col-md-12 text-center">
-
-
-<p style="font-family: mathlete-bulky; font-size: 90px"> Hi. </p>
-
-<p style="font-family: fanwood; font-size :40px"> I'm a budding software developer based in Ibadan , Nigera. I have passion for web technologies and love to explore new trends in technology.  </p>
-
-
-
-</div>
-
-
-
-</div>
-
-
-
-
-</div>
-
-
-
-<!-- About ends here -->
-
-<!-- Experience Bar -->
-
-
-
-
-<div class="container-fluid" id="Experience" style="margin-top : 100px" > 
-
-<div class="row" >
-
-<div class="col-md-12 text-center" style="font-size: 30px; margin-bottom: ; font-family: fanwood">
-
-What I can do
-
-</div>
-
-<!-- Fisrt column starts -->
-<div class="col-md-12">
-
-
- <p style="margin-left: 330px; margin-bottom: -20px "> Html/Css </p>
-<div class="progress" style="width : 500px; margin:auto; margin-top: 30px; height: 40px">
-
- <div class="progress-bar progress-bar-success progress-bar-striped active" role="progressbar"
-  aria-valuenow="1" aria-valuemin="0" aria-valuemax="" style="width:70%">
-    70%
   </div>
 
-</div>
-
-
-</div>
-
-<div class="col-md-12">
-
-
- <p style="margin-left: 330px; margin-bottom: -20px; margin-top: 20px "> PHP </p>
-<div class="progress" style="width : 500px; margin:auto; margin-top: 30px; height: 40px">
-
- <div class="progress-bar progress-bar-success progress-bar-striped active" role="progressbar"
-  aria-valuenow="1" aria-valuemin="0" aria-valuemax="" style="width:55%">
-    55%
-  </div>
-
-</div>
-
-
-<div class="col-md-12">
-
-
- <p style="margin-left: 300px; margin-bottom: -20px; margin-top: 20px "> Javascript </p>
-<div class="progress" style="width : 500px; margin:auto; margin-top: 30px; height : 40px">
-
- <div class="progress-bar progress-bar-success progress-bar-striped active" role="progressbar"
-  aria-valuenow="" aria-valuemin="0" aria-valuemax="" style="width:30%">
-    30%
-  </div>
-
-</div>
-
-<div class="col-md-12">
-
-
- <p style="margin-left: 300px; margin-bottom: -20px; margin-top:20px  "> Wordpress</p>
-<div class="progress" style="width : 500px; margin:auto; margin-top: 30px; height: 40px">
-
- <div class="progress-bar progress-bar-success progress-bar-striped active" role="progressbar"
-  aria-valuenow="1" aria-valuemin="0" aria-valuemax="" style="width:70%">
-    70%
-  </div>
-
-</div>
-
-</div>
-
-
-
-
-<div class="container-fluid" id="Contact" style="" > 
-
-<div class="row">
-
-<div class="col-md-12 text-center" style="margin-top: 50px">
-
-<p style="font-size: 20px; color : blue"> I'm currently available for Freelance work </p>
-
-<p> If you have a project that you want to get started, think you need my help with something or just want to say Hi , then let's talk </p>
-
-Twitter/Email
-</div>
-
-</div>
-
-</div>
-
-
-
-
-</div>
-
-</div>
-<!-- Experience Bar ends -->
-
-
-<!--
-<div class="container" style="position: fixed; background-color: green">
-
-<div class="row">
-
-
-<div class="col-md-12">
-
-Hello world
-
-</div>
-
-</div>
-
-</div>
-
-
-<div class="container-fluid" style="">
-
-
-
-<div class="row col-centered">
-
-
-
-<div class="col-md-12">
-
-<center> <img src="ade.jpg" class="img-circle img-thumbnail"/> </center>
-
-
-
-</div>
-
-
-</div>
-
--->
-
-<!--header id="home-top" class="nav-top nav-fixed nav-root"-->
-
-
-
-<!--
-<div class="container-fluid" style="position:fixed">
-
-
-
-
-
-<div class="row">
-
-<div class="col-sm-4 col-xs-4 col-md-4">
-
-Abiodun Adetona
-
-</div>
-
-<div class="col-sm-4 col-xs-4 col-md-2">
-
-About
-
-
-</div>
-
-
-<div class="col-sm-4 col-xs-4 col-md-2">
-
-Books
-
-
-</div>
-
-
-<div class="col-sm-4 col-xs-4 col-md-2">
-
-Skill Bar.
-
-
-</div>
-
-
-<div class="col-sm-4 col-xs-4 col-md-2">
-
-<a href="https://medium.com/@Adetona77/" alt="Adetona Medium posts"> Blog </a>
-
-</div>
-
-</div>
-</header>
-
-</div>
-
-
-
-<div class="container-fluid">
-
-
-
-<div class="row col-centered">
-
-
-
-<div class="col-md-12">
-
-<center> <img src="ade.jpg" class="img-circle img-thumbnail"/> </center>
-
-
-
-</div>
-
-
-</div>
-
-
-
-<div class="container-fluid">
-
-<div class="row">
-
-<div class="col-md-12 text-center">
-
-
-<p style="font-family: mathlete-bulky; font-size: 90px"> Hi. </p>
-
-<p style="font-family: fanwood; font-size :40px"> I'm a budding software developer based in Ibadan , Nigera. I have passion for web technologies and love to explore new trends in technology.  </p>
-
-
-
-</div>
-
-
-
-</div>
-
-
-
-
-</div>
-
-
-<div class="container-fluid">
-
-
-<div row>
-
-<div class="col-md-12 text-center" style="font-family:mathlete-bulky; font-size: 30px; margin-top : 100px">
-
-My Skill Bar.
-
-
-</div>
-
-
-</div>
-
-
-</div>
-
-<div class="container">
-
-<div class="row">
-
-
- <p style="margin-left: 330px; margin-bottom: -20px "> PHP </p>
-<div class="progress" style="width : 500px; margin:auto; margin-top: 30px;">
-
- <div class="progress-bar progress-bar-success progress-bar-striped active" role="progressbar"
-  aria-valuenow="40" aria-valuemin="0" aria-valuemax="" style="width:55%">
-    55%
   </div>
 
 
-
-
-</div>
-
-
-<p style="margin-left: 330px; margin-bottom: -20px; margin-top: 30px "> Html/css </p>
-
-
-
-<div class="progress" style="width : 500px; margin:auto; margin-top: 30px">
-
- <div class="progress-bar progress-bar-success progress-bar-striped active" role="progressbar"
-  aria-valuenow="75" aria-valuemin="0" aria-valuemax="" style="width:55%">
-    55%
   </div>
 
+<div class="container"> 
+
+<div class="row"> 
+
+<div class="col-md-12 text-center vertical-center fullHeight margin" style="margin-top: 100px"> 
+        <!--section class="fullHeight" id="welcome"-->
+            <!--div class="text-center vertical-center margin"--> 
+            <p class="bigText" id="name">Hi! I'm  Abiodun.</p>
+            <p class="secondHeadline" id="secondHeadline">I'm a software Developer.</p>
+        </div>
+
+  </div>  
+  
+  </div>      
+        <!--/section-->
+        <!--section id="description"-->
+            <div class="container">
 
 
 
-</div>
+
+                <div class="row description">
+                    <div class="col-xs-12">
+                        <span class="mediumText">Bio</span><hr>
+                            <p> 
+
+ <p> I'm a junior software developer and ex-Intern at  <strong> <a href="hotels.ng"> Hotels.ng </a> </strong>. I build websites and love learning its underlying technologies. I'm always on the look to build exciting stuff. </p>
+
+  <p> Recently ,  I was part of the team that built the trendy site <strong>  <a href="http://www.keepthechangebruh.com.ng/index.html" alt="#keepthechangebruh"> #KeepthechangeBruh</a> </strong>  that calcualates people's return on a date .</p>
+
+ <p> I code in PHP and Javascript. You can have a look at some of my projects on  <strong > <a href="https://github.com/Adetona"> github </a> </strong> </p>
+
+<p> When not coding you can find me supporting my favorite football club Chelseafc or reading --   Have a look into my 2017 reading list  on <strong> <a href="https://www.goodreads.com/review/list/55468702-abiodun?utm_campaign=mybooksnav&utm_content=mybooks_cta&utm_medium=web&utm_source=homepage" alt="Abiodun-reading-list"> GoodReads </a> </strong> </p> 
+
+<p> I'm always open to new ideas and opportunities you can get in touch with me via email -- adetonaabiodun12@gmail.com or twitter <strong> <a href="twitter.com/adetona77" alt="Abiodun_Adetona_twitter"> @adetona77 </a></strong> </p> 
 
 
-<p style="margin-left: 330px; margin-bottom: -20px; margin-top: 30px "> Javascript </p>
+                          
+                    </div>
+                </div> 
+            </div>
+        <!--/section-->
+        <!--section id="projects" class="paddingTopped"-->
+            <div class="container">
+                <span class="mediumText">Projects</span><hr>
+                <div class="row">
+                    <div class="col-md-4">
+                       
+<img src="image/keepthechange.jpg" alt="" style="width :100%;  margin-right: 50px" > 
 
-
-<div class="progress" style="width : 500px; margin:auto;margin-top: 30px">
-
- <div class="progress-bar progress-bar-success progress-bar-striped active" role="progressbar"
-  aria-valuenow="40" aria-valuemin="0" aria-valuemax="" style="width:55%">
-    55%
-  </div>
-
-
-
-
-</div>
-
-
-
-</div>
-
-</div>
--->
-</body>
-
+                      
+                        <p class="text-center"><a href="" class="normal"></i></a></p>
+                    </div>
+                    <!--div class="col-sm-4 col-md-4 paddingBottom">
+                        <img src="MiniCalc.png" style="width: 100%;">
+                        <p class="text-center"><a href="http://j.mp/McHacks16"   class="normal">MiniCalc - Watch Calculator</a></p>
+                    </div-->
+                    
+                    <!--div class="col-sm-4 col-md-4 paddingBottom" align="center">
+                        <img src="snap.gif" style="width: 60%;padding-top:20%;padding-bottom: 20%;">
+                        <p class="text-center"><a href="http://snapcodes.me"   class="normal">Snapcodes.me - custom 👻 codes</a></p>
+                    </div>
+                </div-->
+            </div>
+            <div class="container">
+                <!--ul style="list-style:none;padding-left:0;font-size:1.3em;">
+                  <!--<li><strong><a href="https://github.com/jusleg/storyflow">StoryFlow.me</a></strong> - Collaborative instagram stories <i class="fa fa-instagram"></i></li>-->
+                  <!--li><strong><a href="https://www.jusleg.com/pgp2img/">PGP2IMG</a></strong> - Encrypt files or messages in plain sight</li>
+                  <!--<li><strong><a href="http://snapcodes.me">Snapcodes.me</a></strong> - Generate Snapchat QR Code from user name 👻</li>-->
+                  <!--li><strong><a href="https://github.com/jusleg/quotifier">Quotifier</a></strong> - Add random quotes to your code</li>
+                  <li><strong><a href="http://is.gd/McPhysics">Magnetic Pendulum Simulator</a></strong> - Demonstating the butterfly effect</li>
+                  <li><strong><a href="http://j.mp/McHacks16">WalkThru</a></strong> - Physical Shopify store with beacon geolocation</li>
+                    <li><strong><a href="https://jusleg.com/rockpaperbot">Rock Paper Bot</a></strong> - A simple ✊✋✌️ bot</li>
+                    <li><strong><a href="https://github.com/jusleg/ETHwatch">ETHwatch</a></strong> - Cryptocoin portfolio for the Apple Watch</li>
+                    <li><strong><a href="https://www.jusleg.com/twitterblock/">TwitterBlock</a></strong> - Block fake twitter followers</li>
+                    <li><strong><a href="https://github.com/jusleg/OpenAdblock">Open Adblock</a></strong> - Open source iOS adblocker</li>
+                    <li><strong><a href="http://www.trytrippy.xyz">Trippy</a></strong> - Traveling bot &#x2708;</li>
+                    <li><strong><a href="http://j.mp/ConUHacks">Flight Genie</a></strong> - Flight suggestions based on Instagram trends</li>
+                    <li><strong><a href="https://github.com/jusleg/doomsdaySwitch">Doomsday Switch</a></strong> - Arduino IoT light switch</li>
+                    <li><strong><a href="https://github.com/jusleg/HueStockTicker">HueTicker</a></strong> - Monitor portfolio's performance using hue light bulbs</li>
+                    <li><strong><a href="https://github.com/jusleg/ShinyMotion">ShinyMotion</a></strong> - Light bulb using face detection</li>
+                    <li><strong><a href="https://jusleg.com/summer">Summer</a></strong> - Material design light website to keep track of my semester</li>
+                    <li><strong><a href="https://centredentairelegardeur.com">Centre Dentaire Le Gardeur</a></strong> - Bootstrap website</li>
+                    <li><strong><a href="https://lachimiedesgenres.com">La chimie des genres</a></strong> - Bootstrap website with instafeed.js</li>
+                </ul-->
+            </div>
+        <!--/section-->
+        <section id="footerSection" class="paddingToppedSmall">
+            <div class="text-center paddingBottom">
+                <p class="iconFooter">
+<a href="mailto:adetonaabiodun12@gmail.com" class="b"><i class="fa fa-envelope"></i></a>&nbsp;&nbsp;<a href="http://github.com/adetona" class="c"><i class="fa fa-github"></i></a>&nbsp;&nbsp;<a href="http://twitter.com/adetona77" class="d"><i class="fa fa-twitter"></i></a>&nbsp;&nbsp;<a href="http://medium.com/@adetona77" class="e"><i class="fa fa-medium"></i></a></p>
+            </div>
+            <div class="text-center">
+                <!-- Footer is always up to date -->
+                <p class="footer">Abiodun Adetona <span id="yearfooter"></span></p>
+            </div>
+        </section>
+    <script>/* <![CDATA[ */(function(d,s,a,i,j,r,l,m,t){try{l=d.getElementsByTagName('a');t=d.createElement('textarea');for(i=0;l.length-i;i++){try{a=l[i].href;s=a.indexOf('/cdn-cgi/l/email-protection');m=a.length;if(a&&s>-1&&m>28){j=28+s;s='';if(j<m){r='0x'+a.substr(j,2)|0;for(j+=2;j<m&&a.charAt(j)!='X';j+=2)s+='%'+('0'+('0x'+a.substr(j,2)^r).toString(16)).slice(-2);j++;s=decodeURIComponent(s)+a.substr(j,m-j)}t.innerHTML=s.replace(/</g,'&lt;').replace(/\>/g,'&gt;');l[i].href='mailto:'+t.value}}catch(e){}}}catch(e){}})(document);/* ]]> */</script></body>
 </html>

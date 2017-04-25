@@ -74,37 +74,37 @@ p.secondHeadline{
 }
 
 a.{
-    color: #9E9E9E; 
-    text-decoration: underline;
+    /*color: #9E9E9E;*/  
+    text-decoration: none;
 
    /* color : lightblue ;*/
 }
 
 a:hover{
-    /*text-decoration: none;*/ 
+    text-decoration: none; 
 }
 
 a.a:hover{
-    /*color:lightcoral;*/ 
+    color:lightcoral; 
 }
 a.b:hover{
-   /* color: #ffbf7f;*/ 
+   color: #ffbf7f; 
 }
 a.c:hover{
-    /*color:lightgreen;*/
+    color:lightgreen;
 
-    color : black; 
+   /* color : black; */
 }
 a.d:hover{
-    /*color:lightblue;*/ 
+    color:lightblue;
 }
 
 a.e:hover{
-    /*color:#2F6DD5;*/
+    color:#2F6DD5;
 }
 
 a.f:hover{
-    /*color:#cc99ff;*/ 
+    color:#cc99ff;
 }
 
 .iconFooter{

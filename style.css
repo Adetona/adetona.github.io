@@ -75,7 +75,7 @@ p.secondHeadline{
 
 a.{
     /*color: #9E9E9E;*/  
-    text-decoration: none;
+    text-decoration: underline;
 
    color : lightblue ;
 }

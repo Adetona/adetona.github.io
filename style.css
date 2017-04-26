@@ -71,7 +71,10 @@ p.secondHeadline{
 
 a{
 
- color : lightcoral  ;  
+ /*color : lightcoral  ; */ 
+
+color : lightblue;
+
 }
 
 a:hover{
@@ -79,29 +82,20 @@ a:hover{
     color : #9E9E9E ;
 }
 
-a.a:hover{
-   /* color:lightcoral;*/  
-}
 
 a.email {
 
 color: #ffbf7f;
 
-/*color:lightgreen;*/ 
- /*color : black ;*/    
+  
 }
 a:hover.email{
 
 color : #9E9E9E ; 
 
-   /*color: #ffbf7f;*/ 
-
-   /*color : black ; */ 
 }
 
 a.github {
-
-/*color : lightgreen ;*/ 
 
 color : black ;
 
@@ -113,8 +107,6 @@ color : #9E9E9E ;
 }
 
 a.twitter {
-
-/*color:lightblue;*/ 
 
 color : #4099FF;
 
@@ -131,17 +123,13 @@ color : lightgreen;
 }
 
 a:hover.medium{
-    /*color:#2F6DD5;*/ 
-
-    color : #9E9E9E ; 
+  color : #9E9E9E ; 
 }
 
-a.f:hover{
-    color:#cc99ff;
-}
+
 
 .iconFooter{
-    font-size: 1.8em;
+    font-size: 2.5em;
 }
 
 

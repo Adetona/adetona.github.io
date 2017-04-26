@@ -80,24 +80,60 @@ a:hover{
 }
 
 a.a:hover{
-    color:lightcoral; 
+   /* color:lightcoral;*/  
 }
-a.b:hover{
+
+a.email {
+
+color: #ffbf7f;
+
+/*color:lightgreen;*/ 
+ /*color : black ;*/    
+}
+a:hover.email{
+
+color : #9E9E9E ; 
+
    /*color: #ffbf7f;*/ 
 
-   color : black ; 
-}
-a.c:hover{
-    color:lightgreen;
-
-   /* color : black; */
-}
-a.d:hover{
-    color:lightblue;
+   /*color : black ; */ 
 }
 
-a.e:hover{
-    color:#2F6DD5;
+a.github {
+
+/*color : lightgreen ;*/ 
+
+color : black ;
+
+}
+
+a:hover.github{
+ 
+color : #9E9E9E ; 
+}
+
+a.twitter {
+
+/*color:lightblue;*/ 
+
+color : #4099FF;
+
+}
+
+a:hover.twitter{
+color : #9E9E9E ; 
+}
+
+a.medium {
+
+color : lightgreen;
+
+}
+
+a:hover.medium{
+    /*color:#2F6DD5;*/ 
+
+    color : #9E9E9E ; 
 }
 
 a.f:hover{

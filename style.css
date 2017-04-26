@@ -69,22 +69,23 @@ p.secondHeadline{
     padding-bottom: 20px;
 }
 
-a.{
-    /*color: #9E9E9E;*/  
-    /*text-decoration: underline;*/ 
+a{
 
-   color : black ;
+ color : lightcoral  ;  
 }
 
 a:hover{
     text-decoration: none; 
+    color : #9E9E9E ;
 }
 
 a.a:hover{
     color:lightcoral; 
 }
 a.b:hover{
-   color: #ffbf7f; 
+   /*color: #ffbf7f;*/ 
+
+   color : black ; 
 }
 a.c:hover{
     color:lightgreen;

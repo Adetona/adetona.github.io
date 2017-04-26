@@ -11,11 +11,7 @@ margin-top: 110px ;
 
 }
 
-.vertical-center{
-    position: relative;
-    top:50%;
-    transform: translateY(-50%);
-}
+
 .bigText{
     font-size: 50px;
     padding-left: 15px;
@@ -75,9 +71,9 @@ p.secondHeadline{
 
 a.{
     /*color: #9E9E9E;*/  
-    text-decoration: underline;
+    /*text-decoration: underline;*/ 
 
-   color : lightblue ;
+   color : black ;
 }
 
 a:hover{

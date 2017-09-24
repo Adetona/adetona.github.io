@@ -1,0 +1,198 @@
+<!doctype html>
+<html> 
+<head>
+
+<title> WP Medium Editor </title> 
+
+ <link rel="stylesheet" href="medium-editor/dist/css/medium-editor.min.css">
+ 
+  <link rel="stylesheet" href="medium-editor/dist/css/themes/default.css">
+  
+
+   <link href="http://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
+    <link rel="stylesheet" href="medium-editor-insert-plugin/dist/css/medium-editor-insert-plugin.min.css">
+
+        <link rel="stylesheet" href="../style.css">
+		
+
+		<link rel="stylesheet" href="../css/bootstrap.min.css"/>
+		
+		
+
+<script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+		
+		
+
+</head> 
+
+<body> 
+
+
+
+<div class="container">
+
+<div class="nav navbar-nav navbar-right">
+
+<ul class="nav navbar-nav navbar-right">
+      
+      <li><a href="#Install" ><span class=""></span>Installation</a></li>
+	  
+	  <li><a href="#Demo"><span class=""></span>Live Demo</a></li>
+
+      <li><a href="#contact"><span class=""></span>Contact</a></li>
+
+
+
+
+
+
+
+    </ul>
+
+
+
+</div>
+
+
+
+</div>
+
+
+<div class="container">
+<div class="row" style="margin:auto; width: 1000px; margin-top:100px">
+
+<p style="font-size:30px">WP Medium Editor gives you a new writing experience on wordpress. </p>
+</div>
+
+<div class="row" style="margin:auto; width: 600px; margin-top:100px; ">
+<iframe width="560" height="315" src="https://www.youtube.com/embed/lpSBaIooX-s?rel=0&amp;controls=0&amp;showinfo=0&amp;start=60" frameborder="0" allowfullscreen></iframe>
+</div> 
+
+
+<div class="row" style="margin:auto; width: 600px; margin-top:100px;" id="Install">
+
+<p style="font-size:25px"><underline> Quick start.</underline></p>
+
+<p>Via WordPress site Dashboard. </p>
+
+<p ><li style="font-size:15px"> Plugin > Add New > Search 'WP Medium Editor' > Install > Activate. </li> </p>
+
+<p>Manual Installation. </p>
+
+<p ><li style="font-size:15px"><a href="https://downloads.wordpress.org/plugin/wp-medium-editor.zip" alt="Download WP Medium Editor"> Download</a> the Zip file </li> </p>
+
+<p><li style="font-size:15px">Upload the entire `WP-Medium-Editor` folder to the `/wp-content/plugins/` directory. </li></p>
+
+<p><li style="font-size:15px">Activate the plugin through the 'Plugins' menu in WordPress. </li> </p> 
+
+
+</div>
+
+</div>
+</div>
+<div class="container" id="contact">
+
+<div class="row" style="margin:auto; width: 600px; height:500px; margin-top: 450px">
+ 
+
+<p> I am open to your suggestions and feedback - </p>
+
+
+<p> Let's talk <a href="https://twitter.com/Adetona77">@Adetona77</a> </p> 
+
+<p> Mail at adetonaabiodun12@gmail.com</p> 
+
+
+
+</div>
+
+
+</div>
+
+
+<div class="container">
+
+
+<div class="row" id="Demo">
+
+<textarea class="editable"  data-placeholder="start writing..." style="height:500px; width:100%; font-size:20px"></textarea>
+
+
+
+</div>
+
+
+
+</div>
+
+<div class="container">
+ <div class=" row text-center">
+                
+                <p class="footer"> Created By <a href="https://adetona.github.io"> Abiodun Adetona</a> <span id="yearfooter"></span></p>
+            </div>
+
+			</div>
+
+
+<script src="bower_components/jquery/dist/jquery.min.js"></script>
+    <script src="bower_components/blueimp-file-upload/js/vendor/jquery.ui.widget.js"></script>
+    <script src="bower_components/blueimp-file-upload/js/jquery.iframe-transport.js"></script>
+    <script src="bower_components/blueimp-file-upload/js/jquery.fileupload.js"></script>
+    <script src="medium-editor/dist/js/medium-editor.js"></script>
+    <script src="bower_components/handlebars/dist/handlebars.runtime.min.js"></script>
+    <script src="bower_components/jquery-sortable/source/js/jquery-sortable-min.js"></script>
+    <script src="medium-editor-insert-plugin/dist/js/medium-editor-insert-plugin.min.js"></script>
+
+	
+	    <script>
+        var editor = new MediumEditor('.editable'
+            );
+
+        $(function () {
+            $('.editable').mediumInsert({
+                editor: editor,
+                addons: {
+                    images: {
+                        uploadScript: null,
+                        deleteScript: null,
+                        captionPlaceholder: 'Type caption for image',
+                        styles: {
+                            slideshow: {
+                                label: '<span class="fa fa-play"></span>',
+                                added: function ($el) {
+                                    $el
+                                        .data('cycle-center-vert', true)
+                                        .cycle({
+                                            slides: 'figure'
+                                        });
+                                },
+                                removed: function ($el) {
+                                    $el.cycle('destroy');
+                                }
+                            }
+                        },
+                        actions: null
+                    }
+                }
+            });
+        });
+
+        
+    </script>
+ 
+ 
+<script>
+ $('a').click(function(){
+    $('html, body').animate({
+        scrollTop: $( $(this).attr('href') ).offset().top
+    }, 500);
+    return false;
+});
+
+</script> 
+ 
+</body> 
+
+
+
+</html>

@@ -6,6 +6,11 @@ html,body{
 }
 
 
+ul{
+
+    font-size: 20px; 
+}
+
 #projects{
 
     height: 1px; 
@@ -22,7 +27,7 @@ html,body{
 
 .bio{
 
-    font-size: 20px;
+    font-size: 25px;
 
     margin-top: 70px;  
 
@@ -84,11 +89,6 @@ a:hover#menu-icon {
 
 
 
-.footer{
-    color:#9E9E9E;
-    font-size: 1em;
-    padding-bottom:10px;
-}
 
 
 
@@ -96,10 +96,11 @@ a:hover#menu-icon {
 a{
 
  color : lightcoral  ;  
-
+ 
 /*color : lightblue;*/ 
-
 }
+
+
 
 a:hover{
     text-decoration: none; 
@@ -159,27 +160,11 @@ a:hover.medium{
 
 
 
-.img-size {
-
-width : 250px;
-
-height : 250px;
-
-margin-top : 100px ; 
-
-
-}
-
-
-.content {
-
-padding-top: 20px ; 
-
-}
 
 
 
-/* Timeline css */ 
+
+
 
 
 
